@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tamilsnghelloworld 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tamilsnghelloworld
+  template:
+    metadata:
+      labels:
+        app: tamilsnghelloworld 
+    spec:
+      containers:
+        - name: tamilsnghelloworld 
+          image: tamilregistry.azurecr.io/tamilsnghelloworld
+          ports:
+          - containerPort: 8080
